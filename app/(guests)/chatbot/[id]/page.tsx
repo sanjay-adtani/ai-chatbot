@@ -19,13 +19,18 @@ import { Label } from "@radix-ui/react-label";
 import { FormEvent, useEffect, useState } from "react"
 import {z} from "zod";
 import { useForm, Controller } from "react-hook-form";
+import { useParams } from "next/navigation";
 
 const formSchema = z.object({
     message: z.string().min(2, "Your message is too short."),
 });
 
-function ChatBOT({params}: {params: {id: string}}) {
-    const id = params?.id ?? 0;
+// {params}: {params: {id: string}}
+function ChatBOT() {
+    // const id = params?.id ?? 0;
+    let { id } = useParams();
+    if (typeof id !== 'string') id = '0';
+
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [isOpen, setIsOpen] = useState(true);

@@ -50,7 +50,7 @@ async function ViewChatbots() {
             <ul className="flex flex-col space-y-5">
                 {
                     sortedChatbotsByUser.map((chatbot) => (
-                        <Link key={chatbot.id} href={`/edit-chatbot/${chatbot.id}`}>
+                        <Link key={chatbot.id} href={`/edit-chatbot/${chatbot?.id ?? 0}`}>
                             <li className="relative p-10 border rounded-md max-w-3xl bg-white">
                                 <div className="flex justify-between items-center">
                                     <div className="flex items-center space-x-4">

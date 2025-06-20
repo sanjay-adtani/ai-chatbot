@@ -10,18 +10,18 @@ import { GetChatbotByIdResponse, GetChatbotByIdVariables } from '@/types/types'
 import { useMutation, useQuery } from '@apollo/client'
 import { Copy } from 'lucide-react'
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
+import { redirect, useParams } from 'next/navigation'
 import React, { FormEvent, useEffect, useState } from 'react'
 import { toast } from 'sonner'
 
 // interface PageProps {
 //   params: { id: string };
 // }
-function EditChatbot({ params }: { params: { id: string } }) {
-    let id: string;
-    if (params.id) {
-        id = params.id;
-    }
+// { params }: PageProps
+export default function EditChatbot() {
+    let { id } = useParams();
+     if (typeof id !== 'string') id = '0';
+
     const [url, setUrl] = useState<string>('');
     const [newCharacteristics, setNewCharacteristics] = useState<string>('');
     const [chatbotName, setChatbotName] = useState<string>('');
@@ -208,4 +208,3 @@ function EditChatbot({ params }: { params: { id: string } }) {
     )
 }
 
-export default EditChatbot
