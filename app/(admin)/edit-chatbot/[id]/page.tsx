@@ -14,13 +14,14 @@ import { redirect } from 'next/navigation'
 import React, { FormEvent, useEffect, useState } from 'react'
 import { toast } from 'sonner'
 
-type propTypes = {
-    params: {
-        id: string
+// interface PageProps {
+//   params: { id: string };
+// }
+function EditChatbot({ params }: { params: { id: string } }) {
+    let id: string;
+    if (params.id) {
+        id = params.id;
     }
-}
-
-function EditChatbot({params: {id}}: propTypes) {
     const [url, setUrl] = useState<string>('');
     const [newCharacteristics, setNewCharacteristics] = useState<string>('');
     const [chatbotName, setChatbotName] = useState<string>('');

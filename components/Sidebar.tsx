@@ -1,4 +1,4 @@
-import { BotMessageSquare, PencilLine, SearchIcon } from 'lucide-react'
+import { BotMessageSquare, PencilLine } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 

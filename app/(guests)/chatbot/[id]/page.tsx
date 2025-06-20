@@ -9,7 +9,6 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input";
 import { GET_CHATBOT_BY_ID, GET_MESSAGES_BY_CHAT_SESSION_ID } from "@/graphql/queries/queries";
@@ -19,7 +18,7 @@ import { useQuery } from "@apollo/client";
 import { Label } from "@radix-ui/react-label";
 import { FormEvent, useEffect, useState } from "react"
 import {z} from "zod";
-import { Form, useForm, Controller } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 
 const formSchema = z.object({
     message: z.string().min(2, "Your message is too short."),
@@ -44,7 +43,7 @@ function ChatBOT({params}: {params: {id: string}}) {
     const {data: chatBotData} = useQuery<GetChatbotByIdResponse, GetChatbotByIdVariables>(GET_CHATBOT_BY_ID, {
         variables: {id}
     })
-    const { data, error, loading: loadingQuery } = useQuery<MessagesByChatSessionIdResponse, MessagesByChatSessionIdVariables>(GET_MESSAGES_BY_CHAT_SESSION_ID, {
+    const { data, error } = useQuery<MessagesByChatSessionIdResponse, MessagesByChatSessionIdVariables>(GET_MESSAGES_BY_CHAT_SESSION_ID, {
         variables: {
             chat_session_id: chatId
         },
@@ -230,7 +229,7 @@ function zodResolver<T extends z.ZodTypeAny>(formSchema: T): import("react-hook-
                         };
                     }
                     return all;
-                }, {} as Record<string, any>),
+                }, {} as Record<string, unknown>),
             };
         }
     };
