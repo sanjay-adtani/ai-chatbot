@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💬 Customized AI ChatBot
 
-## Getting Started
+A smart, **fully customizable AI chatbot** built using **Next.js 15**, **OpenAI**, and **Apollo Client**. Users can personalize the chatbot’s personality, appearance, and behavior — making it ideal for embedding into websites, SaaS platforms, or customer support flows.
 
-First, run the development server:
+Powered by **OpenAI** for intelligent, contextual conversations and using **IBM API Connect + NeonDB** for flexible, scalable GraphQL-based backend architecture.
+
+---
+
+## 🚀 Tech Stack
+
+| Technology         | Purpose                                 |
+|--------------------|------------------------------------------|
+| **Next.js 15**      | Full-stack React framework              |
+| **TypeScript**      | Type-safe modern JavaScript             |
+| **Apollo Client**   | GraphQL state management & queries      |
+| **OpenAI API**      | AI-generated conversation responses     |
+| **IBM API Connect** | Secure, scalable GraphQL backend        |
+| **NeonDB (PostgreSQL)** | Cloud-native Postgres database         |
+
+---
+
+## 🎯 Key Features
+
+- 🧠 **OpenAI-Powered Conversations**  
+  Real-time, context-aware responses using OpenAI GPT models.
+
+- 🛠️ **Chatbot Customization**  
+  Easily configure bot name, avatar, tone, and behavior.
+
+- 🌐 **GraphQL-Driven Architecture**  
+  Powered by Apollo Client and IBM API Connect for flexible backend communication.
+
+- 🧾 **Conversation History**  
+  Persist and review past interactions via PostgreSQL (NeonDB).
+
+- ⚙️ **Developer Friendly**  
+  Modular, scalable codebase using Next.js App Router & Server Actions.
+
+---
+
+## 🎯 Set Up Environment Variables
+
+# Create a .env.local file and add the following :
+
+# ✅ Clerk Authentication Keys (Used for user management & auth)
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=PASTE_YOUR_PUBLISH_KEY
+CLERK_SECRET_KEY=PASTE_YOUR_SECRET_KEY
+
+# 🔗 GraphQL Endpoint (Using NeonDB + IBM API Connect via StepZen)
+NEXT_PUBLIC_GRAPHQL_ENDPOINT=PASTE_YOUR_ENDPOINT
+GRAPHQL_TOKEN=PASTE_YOUR_TOKEN
+
+# 🧠 OpenAI API Key (Used for chatbot intelligence)
+OPENAI_API_KEY=PASTE_YOUR_KEY
+
+## 📫 Contact
+
+Feel free to reach out for collaboration, feedback, or questions!
+
+- 👤 **Author**: [Sanjay Adtani](https://github.com/sanjay-adtani)
+- 📧 **Email**: sanjay.adtani01@gmail.com
+- 💼 **LinkedIn**: [linkedin.com/in/sanjayadtani](https://www.linkedin.com/in/sanjayadtani)
+
+## 🔧 Getting Started
+
+### 1️⃣ Clone the Repository
 
 ```bash
+git clone https://github.com/sanjay-adtani/ai-chatbot.git
+cd ai-chatbot
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
