@@ -6,6 +6,12 @@ Powered by **OpenAI** for intelligent, contextual conversations and using **IBM 
 
 ---
 
+## 📷 Live Demo
+
+- [Click here to check demo](https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7342469443966377986)
+
+---
+
 ## 🚀 Tech Stack
 
 | Technology         | Purpose                                 |
